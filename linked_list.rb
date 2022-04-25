@@ -104,6 +104,38 @@ class LinkedList
     end
     string += "( #{current_node.data} ) -> nil "
   end
+  def insert_at(value, index)
+    if self.size < index 
+      return "No such Index"
+    else
+      current_index = 0
+      current_node = @head
+      while current_index < index - 1
+        current_node = current_node.pointer
+        current_index += 1
+      end
+      if current_index == 0 && index != 1
+        @head = Node.new(value, @head.pointer)
+      else
+        value = Node.new(value, current_node.pointer)
+        current_node.pointer = value
+      end
+    end
+  end
+  def remove_at(index)
+    if self.size < index + 1
+      return "No such Index"
+    else
+      current_index = 0
+      current_node = @head
+      while current_index < index - 1
+        current_node = current_node.pointer
+        current_index += 1
+      end
+      @head = current_node.pointer if current_index == 0 && index != 1
+      current_node.pointer = current_node.pointer.pointer
+    end
+  end
 end
 
 class Node

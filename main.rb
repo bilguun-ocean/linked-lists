@@ -41,3 +41,11 @@ p list.find("Node2")
 #Represents the linked list as an string.
 puts "The list as an string"
 p list.to_s
+
+puts "Inserting at index 0"
+list.insert_at("Inserted", 0)
+p list.to_s
+
+puts "Removing at index 4"
+list.remove_at(4)
+p list.to_s
