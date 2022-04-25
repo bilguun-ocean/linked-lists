@@ -113,11 +113,3 @@ class Node
   end
   attr_accessor :pointer, :data
 end
-
-list = LinkedList.new("Node1")
-
-list.append("Node2")
-
-list.append("Node3")x
-
-p list.tail
